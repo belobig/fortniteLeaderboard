@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Livinin1",
+    "database": "leaderboardTest_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}

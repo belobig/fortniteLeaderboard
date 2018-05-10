@@ -6,7 +6,7 @@ var router = express.Router();
 module.exports = function () {
 	//GET route
 	router.get("/", function (req, res) {
-		db.User.findAll({}).then(function (results) {
+		db.User.findAll().then(function (results) {
 			console.log("Got here!");
 			var userObj = {
 				users: results

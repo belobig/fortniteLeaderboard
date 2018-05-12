@@ -1,11 +1,38 @@
-<h1>Fortnite Leaderboard</h1>
-<ul>
-	{{#each users}}
-	<li>{{this.nickname}}</li>
-	{{/each}}
-</ul>
+<div class="jumbotron">
+	<div class="container text-center">
+		<h1 class="display-3">Fortnite Leaderboard</h1>
+		<p class="lead">
+			<strong></strong>
+		</p>
+	</div>
+</div>
+<div class="container" id="epic_name">
+	<form id="char_form" method="POST" action="/apiUserName">
+		<div class="form-group text-center">
+			<label for=""></label>
+			<input id="epic_name_field" type="text" class="form-control" name="epic_name">
+			<button type="submit" class="btn btn-success" id="submit">Submit</button>
+		</div>
+	</form>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<ul>
+				{{#each users}}
+				<li>{{this.nickname}}</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Cruddy Leaderboard</h1>
+				<p>
+					{{stats.p2.trnRating.valueInt}}
+				</p>
 
-<h1>Cruddy Leaderboard</h1>
-<p>
-{{stats.p2.trnRating.valueInt}}
-</p>
+			</div>
+		</div>
+	</div>

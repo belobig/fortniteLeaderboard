@@ -9,21 +9,21 @@ var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
 
 // Routes
 //GET route
-router.get("/", function (req, res) {
-	db.User.findAll().then(function (results) {
-		console.log("Got here!");
-		var userObj = {
-			users: results
-		};
-		res.render("index", userObj);
+// router.get("/", function (req, res) {
+// 	db.User.findAll().then(function (results) {
+// 		console.log("Got here!");
+// 		var userObj = {
+// 			users: results
+// 		};
+// 		res.render("index", userObj);
 
-		// res.json(results);
-		// console.log(results);
-	});
-});
+// 		// res.json(results);
+// 		// console.log(results);
+// 	});
+// });
 
 // Another GET route for data from Fortnite Tracker API
-router.get("/leaderboard", function (req, res) {
+router.get("/", function (req, res) {
 	console.log("Leaderboard route");
 	axios({
 		method: "get",
@@ -32,7 +32,7 @@ router.get("/leaderboard", function (req, res) {
 			'TRN-Api-Key': key
 		}
 	}).then(function(response) {
-		res.render("leaderboard", {response: response});
+		res.render("index", {stats: response.data.stats});
 		console.log("Response: ", response.data.stats);
 	});
 });

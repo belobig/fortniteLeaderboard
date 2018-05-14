@@ -1,0 +1,24 @@
+Return of the Pixelated Pythons – Project 2 Proposal
+Project Name: Fornite Leaderboard
+Background is a video
+Create a gaming statistics app that tracks scores and stats of users and compares them together
+Connect with a Fortnite API
+Use Sequelize as our ORM
+Use GET and POST routes, possibly DELETE as well
+Use MySQL DB with JAWS_DB, Deployed on Heroku, storing user nicknames, stats, etc.
+New tech: Fortnite API, Fiddler 4 (for tracking web traffic), Chart.js for stats graphs, Materialize for CSS library
+Use the MVC paradigm
+Store sensitive info, such as API keys in .env file
+Use Handlebars for Templating
+May use authentication, if we get everything else working in time - try to use EPIC Games Authentication
+Use public dataset from Fortnite Tracker API
+Migration Strategy:
+Use package.json to track packages
+Use GitHub branches to collaborate
+
+Future Enhancements:
+Support additional platforms; XB1, PSN
+Testing Framework:
+Use Sequelize’s Mock
+Use Mocha
+Use Chai

@@ -1,11 +1,13 @@
 var db = require("../models");
 // var fortnite = require("../public/assets/js/fnImport");
+// var form = require("../public/assets/js/formhandler")
 var express = require("express");
 var axios = require("axios");
 var router = express.Router();
 
-var example_player = "belobig";
+// var epic_name = "iwafflesi";
 var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
+
 
 // Routes
 //GET route
@@ -22,16 +24,29 @@ var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
 // 	});
 // });
 
+/**
+ * DEMO
+ */
+
+ router.get('/', function(req, res) {
+	 res.render("index");
+ })
+
 // Another GET route for data from Fortnite Tracker API
-router.get("/", function (req, res) {
+// /api/character_data
+router.post("/apiUserName", function (req, res) {
 	console.log("Leaderboard route");
+	console.log(req);
+	console.log(req.params);
+	console.log(req.body);
 	axios({
 		method: "get",
-		url: "https://api.fortnitetracker.com/v1/profile/pc/belobig",
+		url: "https://api.fortnitetracker.com/v1/profile/pc/" + req.body.epic_name,
 		headers: {
 			'TRN-Api-Key': key
 		}
 	}).then(function(response) {
+		console.log(response);
 		res.render("index", {stats: response.data.stats});
 		console.log("Response: ", response.data.stats);
 	});

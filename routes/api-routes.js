@@ -41,14 +41,17 @@ router.post("/apiUserName", function (req, res) {
 	console.log(req.body);
 	axios({
 		method: "get",
-		url: "https://api.fortnitetracker.com/v1/profile/pc/" + req.body.epic_name,
+		url: "https://api.fortnitetracker.com/v1/profile/" + req.body.platform + "/" + req.body.epic_name,
 		headers: {
 			'TRN-Api-Key': key
 		}
 	}).then(function(response) {
-		console.log(response);
+		// console.log("Full Response: ", response);
+		if(response.data.error) {
+			return res.render("index", {error: response.data.error});
+		}
 		res.render("index", {response: response.data});
-		console.log("Response: ", response.data);
+		console.log("Response data: ", response.data);
 	});
 });
 

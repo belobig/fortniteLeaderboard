@@ -47,8 +47,8 @@ router.post("/apiUserName", function (req, res) {
 		}
 	}).then(function(response) {
 		console.log(response);
-		res.render("index", {stats: response.data.stats});
-		console.log("Response: ", response.data.stats);
+		res.render("index", {response: response.data});
+		console.log("Response: ", response.data);
 	});
 });
 

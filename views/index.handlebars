@@ -9,7 +9,7 @@
 <div class="container" id="epic_name">
 	<form id="char_form" method="POST" action="/apiUserName">
 		<div class="form-group text-center">
-			<label for=""></label>
+			<label for="epic_name">Enter a Player's Epic Nickname</label>
 			<input id="epic_name_field" type="text" class="form-control" name="epic_name">
 			<button type="submit" class="btn btn-success" id="submit">Submit</button>
 		</div>
@@ -28,9 +28,39 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Cruddy Leaderboard</h1>
+				<h1>Selected User's Stats:</h1>
 				<p>
-					{{stats.p2.trnRating.valueInt}}
+					Epic Nickname: {{response.epicUserHandle}}
+				</p>
+				<p>
+					Platform: {{response.platformNameLong}}
+				</p>
+				<p>
+					Score: {{response.stats.p2.score.value}}
+				</p>
+				<p>
+					Score Rank: {{response.stats.p2.score.rank}}
+				</p>
+				<p>
+					Kills: {{response.stats.p2.kills.value}}
+				</p>
+				<p>
+					Kills Rank: {{response.stats.p2.kills.rank}}
+				</p>
+				<p>
+					Kill/Death Ratio: {{response.stats.p2.kd.valueDec}}
+				</p>
+				<p>
+					K/D Rank: {{response.stats.p2.kd.rank}}
+				</p>
+				<p>
+					Kills Per Match: {{response.stats.p2.kpg.valueDec}}
+				</p>
+				<p>
+					Matches: {{response.stats.p2.matches.value}}
+				</p>
+				<p>
+					TRN Rating: {{response.stats.p2.trnRating.valueInt}}
 				</p>
 
 			</div>

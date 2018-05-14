@@ -11,9 +11,19 @@
 		<div class="form-group text-center">
 			<label for="epic_name">Enter a Player's Epic Nickname</label>
 			<input id="epic_name_field" type="text" class="form-control" name="epic_name">
+			<label for="platform">Platform</label>
+			<select name="platform" id="platform">
+				<option value="pc">PC</option>
+				<option value="xbl">Xbox One</option>
+				<option value="psn">Play Station</option>
+				<option value="all">All</option>
+			</select>
 			<button type="submit" class="btn btn-success" id="submit">Submit</button>
 		</div>
 	</form>
+	<p class="btn-danger">
+		{{error}}
+	</p>
 </div>
 <div class="container">
 	<div class="row">

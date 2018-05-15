@@ -1,34 +1,44 @@
 <!-- Navbar goes here -->
 <nav class="white" role="navigation">
-    <div class="nav-wrapper nav-color">
-      <a id="logo-container" href="#" class="brand-logo fonthelper">Fortnite Leaderboard</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
+	<div class="nav-wrapper nav-color">
+		<a id="logo-container" href="#" class="brand-logo fonthelper">Fortnite Leaderboard</a>
+		<ul class="right hide-on-med-and-down">
+			<li>
+				<a href="#">Navbar Link</a>
+			</li>
+		</ul>
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
+		<ul id="nav-mobile" class="sidenav">
+			<li>
+				<a href="#">Navbar Link</a>
+			</li>
+		</ul>
+		<a href="#" data-target="nav-mobile" class="sidenav-trigger">
+			<i class="material-icons">menu</i>
+		</a>
+	</div>
 </nav>
 
 
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center">Stat Tracker</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">A simple stat tracking app that lets you see how you stack up to the competition</h5>
-        </div>
+<div id="index-banner" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<br>
+			<br>
+			<h1 class="header center">Stat Tracker</h1>
+			<div class="row center">
+				<h5 class="header col s12 light">A simple stat tracking app that lets you see how you stack up to the competition</h5>
+			</div>
 
-        <br><br>
+			<br>
+			<br>
 
-      </div>
-    </div>
-    <div class="parallax"><img src="../public/assets/img/background1.jpg" alt="Unsplashed background img 1"></div>
-  </div>
+		</div>
+	</div>
+	<div class="parallax">
+		<img src="../public/assets/img/background1.jpg" alt="Unsplashed background img 1">
+	</div>
+</div>
 
 
 
@@ -50,6 +60,7 @@
 							<option value="pc">PC</option>
 							<option value="xbl">Xbox One</option>
 							<option value="psn">Play Station</option>
+							{{!-- TODO: All isn't working yet. Need to see if we can get stats from all platforms in one call --}}
 							<option value="all">All</option>
 						</select>
 						<br>
@@ -67,112 +78,235 @@
 
 			<h1 class="drk_blue">User's Stats:</h1>
 			<p>
-				Epic Nickname: {{response.epicUserHandle}}
+				Epic Nickname:
+				<span class="fonthelper" id="nickname">{{response.epicUserHandle}}</span>
 			</p>
 			<p>
-				Platform: {{response.platformNameLong}}
+				Platform:
+				<span class="fonthelper" id="platformName">{{response.platformNameLong}}</span>
 			</p>
-			<p>
-				Score: {{response.stats.p2.score.value}}
-			</p>
-			<p>
-				Score Rank: {{response.stats.p2.score.rank}}
-			</p>
-			<p>
-				Kills: {{response.stats.p2.kills.value}}
-			</p>
-			<p>
-				Kills Rank: {{response.stats.p2.kills.rank}}
-			</p>
-			<p>
-				Kill/Death Ratio: {{response.stats.p2.kd.valueDec}}
-			</p>
-			<p>
-				K/D Rank: {{response.stats.p2.kd.rank}}
-			</p>
-			<p>
-				Kills Per Match: {{response.stats.p2.kpg.valueDec}}
-			</p>
-			<p>
-				Matches: {{response.stats.p2.matches.value}}
-			</p>
-			<p>
-				TRN Rating: {{response.stats.p2.trnRating.valueInt}}
-			</p>
+			<div class="col s12 m4 l4">
+				<h4>Solos</h4>
+				<hr>
+				<p>
+					Score:
+					<span class="fonthelper" id="p2score">{{response.stats.p2.score.value}}</span>
+				</p>
+				<p>
+					Score Rank:
+					<span class="fonthelper" id="p2scoreRank">{{response.stats.p2.score.rank}}</span>
+				</p>
+				<p>
+					Kills:
+					<span class="fonthelper" id="p2kills">{{response.stats.p2.kills.value}}</span>
+				</p>
+				<p>
+					Kills Rank:
+					<span class="fonthelper" id="p2killsRank">{{response.stats.p2.kills.rank}}</span>
+				</p>
+				<p>
+					Kill/Death Ratio:
+					<span class="fonthelper" id="p2kd">{{response.stats.p2.kd.valueDec}}</span>
+				</p>
+				<p>
+					K/D Rank:
+					<span class="fonthelper" id="p2kdRank">{{response.stats.p2.kd.rank}}</span>
+				</p>
+				<p>
+					Kills Per Match:
+					<span class="fonthelper" id="p2kpg">{{response.stats.p2.kpg.valueDec}}</span>
+				</p>
+				<p>
+					Matches:
+					<span class="fonthelper" id="p2matches">{{response.stats.p2.matches.value}}</span>
+				</p>
+				<p>
+					TRN Rating:
+					<span class="fonthelper" id="p2trnRating">{{response.stats.p2.trnRating.valueInt}}</span>
+				</p>
+			</div>
+			<div class="col s12 m4 l4">
+				<h4>Duos</h4>
+				<hr>
+				<p>
+					Score:
+					<span class="fonthelper" id="p10score">{{response.stats.p10.score.value}}</span>
+				</p>
+				<p>
+					Score Rank:
+					<span class="fonthelper" id="p10scoreRank">{{response.stats.p10.score.rank}}</span>
+				</p>
+				<p>
+					Kills:
+					<span class="fonthelper" id="p10kills">{{response.stats.p10.kills.value}}</span>
+				</p>
+				<p>
+					Kills Rank:
+					<span class="fonthelper" id="p10killsRank">{{response.stats.p10.kills.rank}}</span>
+				</p>
+				<p>
+					Kill/Death Ratio:
+					<span class="fonthelper" id="p10kd">{{response.stats.p10.kd.valueDec}}</span>
+				</p>
+				<p>
+					K/D Rank:
+					<span class="fonthelper" id="p10kdRank">{{response.stats.p10.kd.rank}}</span>
+				</p>
+				<p>
+					Kills Per Match:
+					<span class="fonthelper" id="p10kpg">{{response.stats.p10.kpg.valueDec}}</span>
+				</p>
+				<p>
+					Matches:
+					<span class="fonthelper" id="p10matches">{{response.stats.p10.matches.value}}</span>
+				</p>
+				<p>
+					TRN Rating:
+					<span class="fonthelper" id="p10trnRating">{{response.stats.p10.trnRating.valueInt}}</span>
+				</p>
+			</div>
+			<div class="col s12 m4 l4">
+				<h4>Squads</h4>
+				<hr>
+				<p>
+					Score:
+					<span class="fonthelper" id="p9score">{{response.stats.p9.score.value}}</span>
+				</p>
+				<p>
+					Score Rank:
+					<span class="fonthelper" id="p9scoreRank">{{response.stats.p9.score.rank}}</span>
+				</p>
+				<p>
+					Kills:
+					<span class="fonthelper" id="p9kills">{{response.stats.p9.kills.value}}</span>
+				</p>
+				<p>
+					Kills Rank:
+					<span class="fonthelper" id="p9killsRank">{{response.stats.p9.kills.rank}}</span>
+				</p>
+				<p>
+					Kill/Death Ratio:
+					<span class="fonthelper" id="p9kd">{{response.stats.p9.kd.valueDec}}</span>
+				</p>
+				<p>
+					K/D Rank:
+					<span class="fonthelper" id="p9kdRank">{{response.stats.p9.kd.rank}}</span>
+				</p>
+				<p>
+					Kills Per Match:
+					<span class="fonthelper" id="p9kpg">{{response.stats.p9.kpg.valueDec}}</span>
+				</p>
+				<p>
+					Matches:
+					<span class="fonthelper" id="p9matches">{{response.stats.p9.matches.value}}</span>
+				</p>
+				<p>
+					TRN Rating:
+					<span class="fonthelper" id="p9trnRating">{{response.stats.p9.trnRating.valueInt}}</span>
+				</p>
+			</div>
+
 		</div>
+		<canvas id="myChart" class="col s12 m4 l4"></canvas>
 	</div>
 </div>
 
 <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="../public/assets/img/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+			</div>
+		</div>
+	</div>
+	<div class="parallax">
+		<img src="../public/assets/img/background2.jpg" alt="Unsplashed background img 2">
+	</div>
+</div>
 
-  <div class="container">
-    <div class="section">
+<div class="container">
+	<div class="section">
 
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Look it's Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
+		<div class="row">
+			<div class="col s12 center">
+				<h3>
+					<i class="mdi-content-send brown-text"></i>
+				</h3>
+				<h4>Look it's Us</h4>
+				<p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque
+					tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien
+					id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin
+					diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida
+					ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus
+					et ultrices posuere cubilia Curae;</p>
+			</div>
+		</div>
 
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="../public/assets/img/background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">The Pixelated Pythons</h5>
-          <p class="grey-text text-lighten-4"> We are a team of college students...</p>
+	</div>
+</div>
 
 
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by The Pixelated Pythons, with help</a>
-      </div>
-    </div>
-  </footer>
+<div class="parallax-container valign-wrapper">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<div class="row center">
+				<h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+			</div>
+		</div>
+	</div>
+	<div class="parallax">
+		<img src="../public/assets/img/background3.jpg" alt="Unsplashed background img 3">
+	</div>
+</div>
 
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col l6 s12">
+				<h5 class="white-text">The Pixelated Pythons</h5>
+				<p class="grey-text text-lighten-4"> We are a team of college students...</p>
+
+
+			</div>
+			<div class="col l3 s12">
+				<h5 class="white-text">Settings</h5>
+				<ul>
+					<li>
+						<a class="white-text" href="#!">Link 1</a>
+					</li>
+					<li>
+						<a class="white-text" href="#!">Link 2</a>
+					</li>
+					<li>
+						<a class="white-text" href="#!">Link 3</a>
+					</li>
+					<li>
+						<a class="white-text" href="#!">Link 4</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col l3 s12">
+				<h5 class="white-text">Connect</h5>
+				<ul>
+					<li>
+						<a class="white-text" href="#!">Link 1</a>
+					</li>
+					<li>
+						<a class="white-text" href="#!">Link 2</a>
+					</li>
+					<li>
+						<a class="white-text" href="#!">Link 3</a>
+					</li>
+					<li>
+						<a class="white-text" href="#!">Link 4</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			Made by The Pixelated Pythons, with help</a>
+		</div>
+	</div>
+</footer>

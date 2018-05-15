@@ -9,6 +9,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "chai-http": "^4.0.0",
+    "chai": "^4.1.2",
     "chart.js": "^2.7.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
@@ -20,9 +22,13 @@
     "nodemon": "^1.17.4",
     "sequelize": "^4.37.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai-http": "^4.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^2.4.5"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {

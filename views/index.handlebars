@@ -1,80 +1,178 @@
+<!-- Navbar goes here -->
+<nav class="white" role="navigation">
+    <div class="nav-wrapper nav-color">
+      <a id="logo-container" href="#" class="brand-logo fonthelper">Fortnite Leaderboard</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
 
-<div class="jumbotron">
-	<div class="container text-center">
-		<h1 class="display-3">Fortnite Leaderboard</h1>
-		<p class="lead">
-			<strong></strong>
-		</p>
-	</div>
-</div>
-<div class="container" id="epic_name">
-	<form id="char_form" method="POST" action="/apiUserName">
-		<div class="form-group text-center">
-			<label for="epic_name">Enter a Player's Epic Nickname</label>
-			<input id="epic_name_field" type="text" class="form-control" name="epic_name">
-			<label for="platform">Platform</label>
-			<select name="platform" id="platform" class="form-control">
-				<option value="pc">PC</option>
-				<option value="xbl">Xbox One</option>
-				<option value="psn">Play Station</option>
-				<option value="all">All</option>
-			</select>
-			<button type="submit" class="btn btn-success" id="submit">Submit</button>
-		</div>
-	</form>
-	<p class="btn-danger">
-		{{error}}
-	</p>
-</div>
-<div class="container">
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center">Stat Tracker</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A simple stat tracking app that lets you see how you stack up to the competition</h5>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="../public/assets/img/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+
+
+
+<div class="container lt_blue_BACK">
+	<!-- Page Content goes here -->
+	<!-- Page Layout here -->
 	<div class="row">
-		<div class="col-md-12">
-			<ul>
-				{{#each users}}
-				<li>{{this.nickname}}</li>
-				{{/each}}
-			</ul>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1>Selected User's Stats:</h1>
-				<p>
-					Epic Nickname: {{response.epicUserHandle}}
-				</p>
-				<p>
-					Platform: {{response.platformNameLong}}
-				</p>
-				<p>
-					Score: {{response.stats.p2.score.value}}
-				</p>
-				<p>
-					Score Rank: {{response.stats.p2.score.rank}}
-				</p>
-				<p>
-					Kills: {{response.stats.p2.kills.value}}
-				</p>
-				<p>
-					Kills Rank: {{response.stats.p2.kills.rank}}
-				</p>
-				<p>
-					Kill/Death Ratio: {{response.stats.p2.kd.valueDec}}
-				</p>
-				<p>
-					K/D Rank: {{response.stats.p2.kd.rank}}
-				</p>
-				<p>
-					Kills Per Match: {{response.stats.p2.kpg.valueDec}}
-				</p>
-				<p>
-					Matches: {{response.stats.p2.matches.value}}
-				</p>
-				<p>
-					TRN Rating: {{response.stats.p2.trnRating.valueInt}}
-				</p>
 
+		<div class="col s12 m4 l4 sidebar z-depth-2">
+			<div id="epic_name">
+				<form id="char_form" method="POST" action="/apiUserName">
+					<div class="form-group text-center">
+						<label for="epic_name">Enter a Player's Epic Nickname</label>
+						<input id="epic_name_field" type="text" class="form-control" name="epic_name">
+						<label for="platform">Platform</label>
+						<select name="platform" id="platform" class="form-control">
+							<option value="pc">PC</option>
+							<option value="xbl">Xbox One</option>
+							<option value="psn">Play Station</option>
+							<option value="all">All</option>
+						</select>
+						<br>
+						<button type="submit" class="btn btn-success" id="submit">Submit</button>
+					</div>
+				</form>
+				<p class="btn-danger">
+					{{error}}
+				</p>
 			</div>
+
+		</div>
+
+		<div class="col s12 m8 l8 main">
+
+			<h1 class="drk_blue">User's Stats:</h1>
+			<p>
+				Epic Nickname: {{response.epicUserHandle}}
+			</p>
+			<p>
+				Platform: {{response.platformNameLong}}
+			</p>
+			<p>
+				Score: {{response.stats.p2.score.value}}
+			</p>
+			<p>
+				Score Rank: {{response.stats.p2.score.rank}}
+			</p>
+			<p>
+				Kills: {{response.stats.p2.kills.value}}
+			</p>
+			<p>
+				Kills Rank: {{response.stats.p2.kills.rank}}
+			</p>
+			<p>
+				Kill/Death Ratio: {{response.stats.p2.kd.valueDec}}
+			</p>
+			<p>
+				K/D Rank: {{response.stats.p2.kd.rank}}
+			</p>
+			<p>
+				Kills Per Match: {{response.stats.p2.kpg.valueDec}}
+			</p>
+			<p>
+				Matches: {{response.stats.p2.matches.value}}
+			</p>
+			<p>
+				TRN Rating: {{response.stats.p2.trnRating.valueInt}}
+			</p>
 		</div>
 	</div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="../public/assets/img/background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Look it's Us</h4>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="../public/assets/img/background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">The Pixelated Pythons</h5>
+          <p class="grey-text text-lighten-4"> We are a team of college students...</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by The Pixelated Pythons, with help</a>
+      </div>
+    </div>
+  </footer>
 

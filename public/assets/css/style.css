@@ -1,15 +1,30 @@
-/* 
-color: #FAF9FA
-color: #BEBDBC
-color: #A4A5A6
-color: #A7A6A2
-color: #3a3b39
-*/
+
+.colorhelper {
+color: #2a2a2a;
+color: #ffff00;
+color: #1ac2fe;
+color: #c9cad8;
+color: #ffffff;
+color: #e6bb0d;
+color: #fef684;
+color: #0183b1;
+color: #8e90ad;
+}
+.fonthelper {
+	font-family: 'Luckiest Guy', cursive;
+}
+/* Above content is for text fonts and color matching -- Comment or remove when production ready */
 
 body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+	background-color: #1ac2fe;
+}
+
+/* what did the header tag change to? */
+h1, h2, h3, h4 { 
+	font-family: 'Luckiest Guy', cursive;
 }
 
 main {
@@ -17,9 +32,96 @@ main {
 }
 
 .nav-color {
-	background-color: #3a3b39; 
+	background-color: #2a2a2a; 
+}
+
+.sidebar {
+	background-color: #e6bb0d;
+	/* border-right: 2px solid  */
+	/* height:  */
+}
+
+.main {
+	/* background-color: teal; */
+}
+
+.lt_blue_BACK {
+	background-color: #1ac2fe;
+}
+
+.drk_blue {
+	color: #0183b1;
+}
+
+label {
+	color: #2a2a2a;
+	font-family: 'Luckiest Guy', cursive;
+	letter-spacing: 2px;
+	/* text-shadow:
+	-1px -1px 0 #000,
+	 1px -1px 0 #000,
+	-1px  0px 0 #000,
+	 1px  1px 0 #000; */
+	font-size: 20px;
+}
+.active {
+	border-bottom: #ffff00;
+}
+
+
+#logo-container {
+	margin-left: 20px;
+	text-decoration: none;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #1ac2fe;
 }
 
 .parallax-container {
-	/* height: 100px; */
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+	
+.parallax-container .section 
+{
+    width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
 }

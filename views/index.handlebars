@@ -16,6 +16,7 @@
 				<option value="pc">PC</option>
 				<option value="xbl">Xbox One</option>
 				<option value="psn">Play Station</option>
+				{{!-- TODO: All option not working yet. Need to figure out how to get stats for all 3 in one API call --}}
 				<option value="all">All</option>
 			</select>
 			<button type="submit" class="btn btn-success" id="submit">Submit</button>
@@ -37,7 +38,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-lg-6">
 				<h1>Selected User's Stats:</h1>
 				<p>
 					Epic Nickname: {{response.epicUserHandle}}
@@ -73,6 +74,9 @@
 					TRN Rating: {{response.stats.p2.trnRating.valueInt}}
 				</p>
 
+			</div>
+			<div class="col-lg-6">
+				<canvas id="myChart" width="400" height="400"></canvas>
 			</div>
 		</div>
 	</div>

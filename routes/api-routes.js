@@ -35,10 +35,10 @@ var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
 // Another GET route for data from Fortnite Tracker API
 // /api/character_data
 router.post("/apiUserName", function (req, res) {
-	console.log("Leaderboard route");
-	console.log(req);
-	console.log(req.params);
-	console.log(req.body);
+	// console.log("Leaderboard route");
+	// console.log(req);
+	// console.log(req.params);
+	// console.log(req.body);
 	axios({
 		method: "get",
 		url: "https://api.fortnitetracker.com/v1/profile/" + req.body.platform + "/" + req.body.epic_name,
@@ -51,7 +51,7 @@ router.post("/apiUserName", function (req, res) {
 			return res.render("index", {error: response.data.error});
 		}
 		res.render("index", {response: response.data});
-		console.log("Response data: ", response.data);
+		console.log("Response data: ", response.data.stats);
 	});
 });
 

@@ -85,17 +85,29 @@
 				Platform:
 				<span class="fonthelper" id="platformName">{{response.platformNameLong}}</span>
 			</p>
+			<h4>Overall</h4>
+			<hr>
+			<table>
+				<tr>
+					<th>Score</th>
+					<th>Matches Played</th>
+					<th>Wins</th>
+					<th>Win %</th>
+					<th>Kills</th>
+					<th>K/D</th>
+				</tr>
+				<tr>
+					<td class="fonthelper">{{response.lifeTimeStats.[6].value}}</td>
+					<td class="fonthelper">{{response.lifeTimeStats.[7].value}}</td>
+					<td class="fonthelper">{{response.lifeTimeStats.[8].value}}</td>
+					<td class="fonthelper">{{response.lifeTimeStats.[9].value}}</td>
+					<td class="fonthelper">{{response.lifeTimeStats.[10].value}}</td>
+					<td class="fonthelper">{{response.lifeTimeStats.[11].value}}</td>
+				</tr>
+			</table>
 			<div class="col s12 m4 l4">
 				<h4>Solos</h4>
 				<hr>
-				<p>
-					Score:
-					<span class="fonthelper" id="p2score">{{response.stats.p2.score.value}}</span>
-				</p>
-				<p>
-					Score Rank:
-					<span class="fonthelper" id="p2scoreRank">{{response.stats.p2.score.rank}}</span>
-				</p>
 				<p>
 					Kills:
 					<span class="fonthelper" id="p2kills">{{response.stats.p2.kills.value}}</span>
@@ -121,6 +133,18 @@
 					<span class="fonthelper" id="p2matches">{{response.stats.p2.matches.value}}</span>
 				</p>
 				<p>
+					Score:
+					<span class="fonthelper" id="p2score">{{response.stats.p2.score.value}}</span>
+				</p>
+				<p>
+					Score Rank:
+					<span class="fonthelper" id="p2scoreRank">{{response.stats.p2.score.rank}}</span>
+				</p>
+				<p>
+					Score Per Match:
+					<span class="fonthelper" id="p2scorePerMatch">{{response.stats.p2.scorePerMatch.displayValue}}</span>
+				</p>
+				<p>
 					TRN Rating:
 					<span class="fonthelper" id="p2trnRating">{{response.stats.p2.trnRating.valueInt}}</span>
 				</p>
@@ -128,14 +152,6 @@
 			<div class="col s12 m4 l4">
 				<h4>Duos</h4>
 				<hr>
-				<p>
-					Score:
-					<span class="fonthelper" id="p10score">{{response.stats.p10.score.value}}</span>
-				</p>
-				<p>
-					Score Rank:
-					<span class="fonthelper" id="p10scoreRank">{{response.stats.p10.score.rank}}</span>
-				</p>
 				<p>
 					Kills:
 					<span class="fonthelper" id="p10kills">{{response.stats.p10.kills.value}}</span>
@@ -161,6 +177,18 @@
 					<span class="fonthelper" id="p10matches">{{response.stats.p10.matches.value}}</span>
 				</p>
 				<p>
+					Score:
+					<span class="fonthelper" id="p10score">{{response.stats.p10.score.value}}</span>
+				</p>
+				<p>
+					Score Rank:
+					<span class="fonthelper" id="p10scoreRank">{{response.stats.p10.score.rank}}</span>
+				</p>
+				<p>
+					Score Per Match:
+					<span class="fonthelper" id="p10scorePerMatch">{{response.stats.p10.scorePerMatch.displayValue}}</span>
+				</p>
+				<p>
 					TRN Rating:
 					<span class="fonthelper" id="p10trnRating">{{response.stats.p10.trnRating.valueInt}}</span>
 				</p>
@@ -168,14 +196,6 @@
 			<div class="col s12 m4 l4">
 				<h4>Squads</h4>
 				<hr>
-				<p>
-					Score:
-					<span class="fonthelper" id="p9score">{{response.stats.p9.score.value}}</span>
-				</p>
-				<p>
-					Score Rank:
-					<span class="fonthelper" id="p9scoreRank">{{response.stats.p9.score.rank}}</span>
-				</p>
 				<p>
 					Kills:
 					<span class="fonthelper" id="p9kills">{{response.stats.p9.kills.value}}</span>
@@ -199,6 +219,18 @@
 				<p>
 					Matches:
 					<span class="fonthelper" id="p9matches">{{response.stats.p9.matches.value}}</span>
+				</p>
+				<p>
+					Score:
+					<span class="fonthelper" id="p9score">{{response.stats.p9.score.value}}</span>
+				</p>
+				<p>
+					Score Rank:
+					<span class="fonthelper" id="p9scoreRank">{{response.stats.p9.score.rank}}</span>
+				</p>
+				<p>
+					Score Per Match:
+					<span class="fonthelper" id="p9scorePerMatch">{{response.stats.p9.scorePerMatch.displayValue}}</span>
 				</p>
 				<p>
 					TRN Rating:

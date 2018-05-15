@@ -117,20 +117,35 @@
 					<div class="percentilebar tooltipped" id="p2KillsBar" data-position="bottom" data-tooltip="I am a tooltip">
 						<div class="p2percentilebar_fill" id="p2KillsFill" style="width: 0%"></div>
 					</div>
-					<div class="hidden">Percentile: <span class="fonthelper" id="p2killsPercentile">{{response.stats.p2.kills.percentile}}</span>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p2killsPercentile">{{response.stats.p2.kills.percentile}}</span>
 					</div>
 				</p>
 				<p>
 					Kill/Death Ratio:
 					<span class="fonthelper" id="p2kd">{{response.stats.p2.kd.valueDec}}</span>
-				</p>
-				<p>
-					K/D Rank:
-					<span class="fonthelper" id="p2kdRank">{{response.stats.p2.kd.rank}}</span>
+					<br>
+					<span class="fonthelper" id="p2kdRank">#{{response.stats.p2.kd.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p2KDBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p2percentilebar_fill" id="p2kdFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p2kdPercentile">{{response.stats.p2.kd.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Kills Per Match:
 					<span class="fonthelper" id="p2kpg">{{response.stats.p2.kpg.valueDec}}</span>
+					<br>
+					<span class="fonthelper" id="p2kpgRank">#{{response.stats.p2.kpg.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p2kpgBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p2percentilebar_fill" id="p2kpgFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p2kpgPercentile">{{response.stats.p2.kpg.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Matches:
@@ -165,20 +180,35 @@
 					<div class="percentilebar tooltipped" id="p10KillsBar" data-position="bottom" data-tooltip="I am a tooltip">
 						<div class="p10percentilebar_fill" id="p10KillsFill" style="width: 0%"></div>
 					</div>
-					<div class="hidden">Percentile: <span class="fonthelper" id="p10killsPercentile">{{response.stats.p10.kills.percentile}}</span>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p10killsPercentile">{{response.stats.p10.kills.percentile}}</span>
 					</div>
 				</p>
 				<p>
 					Kill/Death Ratio:
 					<span class="fonthelper" id="p10kd">{{response.stats.p10.kd.valueDec}}</span>
-				</p>
-				<p>
-					K/D Rank:
-					<span class="fonthelper" id="p10kdRank">{{response.stats.p10.kd.rank}}</span>
+					<br>
+					<span class="fonthelper" id="p10kdRank">#{{response.stats.p10.kd.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p10KDBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p10percentilebar_fill" id="p10kdFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p10kdPercentile">{{response.stats.p10.kd.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Kills Per Match:
 					<span class="fonthelper" id="p10kpg">{{response.stats.p10.kpg.valueDec}}</span>
+					<br>
+					<span class="fonthelper" id="p10kpgRank">#{{response.stats.p10.kpg.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p10kpgBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p10percentilebar_fill" id="p10kpgFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p10kpgPercentile">{{response.stats.p10.kpg.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Matches:
@@ -213,20 +243,35 @@
 					<div class="percentilebar tooltipped" id="p9KillsBar" data-position="bottom" data-tooltip="I am a tooltip">
 						<div class="p9percentilebar_fill" id="p9KillsFill" style="width: 0%"></div>
 					</div>
-					<div class="hidden">Percentile: <span class="fonthelper" id="p9killsPercentile">{{response.stats.p9.kills.percentile}}</span>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p9killsPercentile">{{response.stats.p9.kills.percentile}}</span>
 					</div>
 				</p>
 				<p>
 					Kill/Death Ratio:
 					<span class="fonthelper" id="p9kd">{{response.stats.p9.kd.valueDec}}</span>
-				</p>
-				<p>
-					K/D Rank:
-					<span class="fonthelper" id="p9kdRank">{{response.stats.p9.kd.rank}}</span>
+					<br>
+					<span class="fonthelper" id="p9kdRank">#{{response.stats.p9.kd.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p9KDBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p9percentilebar_fill" id="p9kdFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p9kdPercentile">{{response.stats.p9.kd.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Kills Per Match:
 					<span class="fonthelper" id="p9kpg">{{response.stats.p9.kpg.valueDec}}</span>
+					<br>
+					<span class="fonthelper" id="p9kpgRank">#{{response.stats.p9.kpg.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p9kpgBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p9percentilebar_fill" id="p9kpgFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile:
+						<span class="fonthelper" id="p9kpgPercentile">{{response.stats.p9.kpg.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Matches:

@@ -111,10 +111,14 @@
 				<p>
 					Kills:
 					<span class="fonthelper" id="p2kills">{{response.stats.p2.kills.value}}</span>
-				</p>
-				<p>
-					Kills Rank:
-					<span class="fonthelper" id="p2killsRank">{{response.stats.p2.kills.rank}}</span>
+					<br>
+					<span class="fonthelper" id="p2killsRank">#{{response.stats.p2.kills.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p2KillsBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p2percentilebar_fill" id="p2KillsFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile: <span class="fonthelper" id="p2killsPercentile">{{response.stats.p2.kills.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Kill/Death Ratio:
@@ -155,10 +159,14 @@
 				<p>
 					Kills:
 					<span class="fonthelper" id="p10kills">{{response.stats.p10.kills.value}}</span>
-				</p>
-				<p>
-					Kills Rank:
-					<span class="fonthelper" id="p10killsRank">{{response.stats.p10.kills.rank}}</span>
+					<br>
+					<span class="fonthelper" id="p10killsRank">#{{response.stats.p10.kills.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p10KillsBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p10percentilebar_fill" id="p10KillsFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile: <span class="fonthelper" id="p10killsPercentile">{{response.stats.p10.kills.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Kill/Death Ratio:
@@ -199,10 +207,14 @@
 				<p>
 					Kills:
 					<span class="fonthelper" id="p9kills">{{response.stats.p9.kills.value}}</span>
-				</p>
-				<p>
-					Kills Rank:
-					<span class="fonthelper" id="p9killsRank">{{response.stats.p9.kills.rank}}</span>
+					<br>
+					<span class="fonthelper" id="p9killsRank">#{{response.stats.p9.kills.rank}}</span>
+					<br>
+					<div class="percentilebar tooltipped" id="p9KillsBar" data-position="bottom" data-tooltip="I am a tooltip">
+						<div class="p9percentilebar_fill" id="p9KillsFill" style="width: 0%"></div>
+					</div>
+					<div class="hidden">Percentile: <span class="fonthelper" id="p9killsPercentile">{{response.stats.p9.kills.percentile}}</span>
+					</div>
 				</p>
 				<p>
 					Kill/Death Ratio:

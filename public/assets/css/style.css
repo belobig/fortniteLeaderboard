@@ -1,0 +1,25 @@
+/* 
+color: #FAF9FA
+color: #BEBDBC
+color: #A4A5A6
+color: #A7A6A2
+color: #3a3b39
+*/
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.nav-color {
+	background-color: #3a3b39; 
+}
+
+.parallax-container {
+	/* height: 100px; */
+}

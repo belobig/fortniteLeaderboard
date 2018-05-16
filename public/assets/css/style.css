@@ -9,6 +9,12 @@ color: #e6bb0d;
 color: #fef684;
 color: #0183b1;
 color: #8e90ad;
+color: #17c2fe;
+color: #0682b1;
+color: #5cfc7b;
+color: #41b057;
+color: #c272d9;
+color: #9042a6;
 }
 .fonthelper {
 	font-family: 'Luckiest Guy', cursive;
@@ -22,7 +28,31 @@ body {
 	background-color: #1ac2fe;
 }
 
-/* what did the header tag change to? */
+.dev-card {
+	color: #c9cad8;
+	background-color: #0183b1;
+}
+
+.spacing {
+	letter-spacing: 2px;
+}
+
+.font28 {
+	font-size: 28px;
+}
+
+.solos {
+	background-color: #0682b1;
+}
+
+.duos {
+	background-color: #41b057;
+}
+
+.squads {
+	background-color: #9042a6;
+}
+
 h1, h2, h3, h4 { 
 	font-family: 'Luckiest Guy', cursive;
 }
@@ -35,18 +65,25 @@ main {
 	background-color: #2a2a2a; 
 }
 
-.sidebar {
-	background-color: #e6bb0d;
-	/* border-right: 2px solid  */
-	/* height:  */
+.footer-color {
+	background-color: #8e90ad; 
 }
 
-.main {
-	/* background-color: teal; */
+.footer-color-drk {
+	background-color: #2a2a2a; 
 }
+
+.sidebar {
+	background-color: #e6bb0d;
+}
+
 
 .lt_blue_BACK {
 	background-color: #1ac2fe;
+}
+
+.overall {
+	background-color: #8e90ad;
 }
 
 .drk_blue {
@@ -57,17 +94,11 @@ label {
 	color: #2a2a2a;
 	font-family: 'Luckiest Guy', cursive;
 	letter-spacing: 2px;
-	/* text-shadow:
-	-1px -1px 0 #000,
-	 1px -1px 0 #000,
-	-1px  0px 0 #000,
-	 1px  1px 0 #000; */
 	font-size: 20px;
 }
 .active {
 	border-bottom: #ffff00;
 }
-
 
 #logo-container {
 	margin-left: 20px;
@@ -94,9 +125,45 @@ p {
   color: rgba(255,255,255,.9);
 }
 	
-.parallax-container .section 
-{
-    width: 100%;
+.parallax-container .section {
+  width: 100%;
+}
+
+.icon-block {
+	padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.percentilebar {
+	border-radius: 2px;
+	width: 100%;
+	height: .4rem;
+	overflow: hidden;
+	background: #363636;
+	margin: .4rem 0;
+}
+
+.p2percentilebar_fill {
+	background: #17c2fe;
+	height: 100%;
+	border-radius: 2px;
+}
+.p10percentilebar_fill {
+	background: #5cfc7b;
+	height: 100%;
+	border-radius: 2px;
+}
+
+.p9percentilebar_fill {
+	background: #c272d9;
+	height: 100%;
+	border-radius: 2px;
+}
+
+footer.page-footer {
+	margin: 0;
 }
 
 @media only screen and (max-width : 992px) {
@@ -113,41 +180,4 @@ p {
   #index-banner .section {
     top: 0;
   }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-.percentilebar {
-	border-radius: 2px;
-	width: 100%;
-	height: .4rem;
-	overflow: hidden;
-	background: #363636;
-	margin: .4rem 0;
-}
-
-.p2percentilebar_fill {
-	background: rgba(255, 99, 132, 1);
-	height: 100%;
-	border-radius: 2px;
-}
-.p10percentilebar_fill {
-	background: rgba(54, 162, 235, 1);
-	height: 100%;
-	border-radius: 2px;
-}
-
-.p9percentilebar_fill {
-	background: rgba(255, 206, 86, 1);
-	height: 100%;
-	border-radius: 2px;
-}
-
-footer.page-footer {
-  margin: 0;
 }

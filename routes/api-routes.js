@@ -59,10 +59,18 @@ router.post("/apiUserName", function (req, res) {
 router.post("/", function (res, req) {
 	var user = req.body;
 	db.User.create({
-		nickname: user.nickname,
-		awesomeness_level: user.awesomeness_level,
-		age: user.age,
-		class: user.class
+		epicID: user.epicID,
+		kills: user.kills,
+		killRank: user.killRank,
+		kdRatio: user.kdRatio,
+		kdRank: user.kdRank,
+		kpm: user.kpm,
+		kpmRank: user.kpmRank,
+		matches: user.matches,
+		score: user.score,
+		scoreRank: user.scoreRank,
+		scorePerMatch: user.scorePerMatch,
+		trnRating: user.trnRating,
 	}).then(function (dbUser) {
 		res.json(dbUser);
 		console.log(dbUser);

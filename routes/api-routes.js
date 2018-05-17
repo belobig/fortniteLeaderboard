@@ -12,9 +12,16 @@ var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
 // Routes
 
 
- router.get('/', function(req, res) {
-	 res.render("index");
- })
+router.get('/', function (req, res) {
+	db.User.findAll().then(function (results) {
+		console.log("Results", results);
+		var userObj = {
+			users: results
+		};
+		res.render("index", userObj);
+	})
+	
+});
 
 // Another GET route for data from Fortnite Tracker API
 // /api/character_data
@@ -29,13 +36,43 @@ router.post("/apiUserName", function (req, res) {
 		headers: {
 			'TRN-Api-Key': key
 		}
-	}).then(function(response) {
+	}).then(function (response) {
 		// console.log("Full Response: ", response);
-		if(response.data.error) {
-			return res.render("index", {error: response.data.error});
+		if (response.data.error) {
+			return res.render("index", {
+				error: response.data.error
+			});
 		}
-		res.render("index", {response: response.data});
-		console.log("Response data: ", response.data.stats);
+		// console.log(res);
+
+		res.render("index", {
+			response: response.data
+		});
+		// console.log("Response data: ", response.data.stats);
+	});
+});
+
+router.post("/leaderboard/:user", function (res, req) {
+	// console.log(req.req.params.user);
+	var user = req.req.params.user;
+	console.log(user);
+	db.User.create({
+		epicID: user
+		// kills: user.kills,
+		// killRank: user.killRank,
+		// kdRatio: user.kdRatio,
+		// kdRank: user.kdRank,
+		// kpm: user.kpm,
+		// kpmRank: user.kpmRank,
+		// matches: user.matches,
+		// score: user.score,
+		// scoreRank: user.scoreRank,
+		// scorePerMatch: user.scorePerMatch,
+		// trnRating: user.trnRating,
+	}).then(function (data) {
+		res.res.redirect("/");
+		// console.log("Res: ", res.res);
+
 	});
 });
 

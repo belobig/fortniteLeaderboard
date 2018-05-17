@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 var db = require("./models");
+var methodOverride = require('method-override');
 
 
 var PORT = process.env.PORT || 8082;
@@ -18,6 +19,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
+// Override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 
 const exphbs = require("express-handlebars");
 
@@ -26,7 +29,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-const routes = require("./routes/api-routes.js");
+const routes = require("./routes/api-routes.js", "./routes/html-routes");
 
 app.use(routes);
 

@@ -10,23 +10,7 @@ var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
 
 
 // Routes
-//GET route
-// router.get("/", function (req, res) {
-// 	db.User.findAll().then(function (results) {
-// 		console.log("Got here!");
-// 		var userObj = {
-// 			users: results
-// 		};
-// 		res.render("index", userObj);
 
-// 		// res.json(results);
-// 		// console.log(results);
-// 	});
-// });
-
-/**
- * DEMO
- */
 
  router.get('/', function(req, res) {
 	 res.render("index");

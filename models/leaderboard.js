@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
 		updatedAt: {
 			type: DataTypes.DATE,
 			defaultValue: null
-		},
+		}
 	});
 	return User;
 }

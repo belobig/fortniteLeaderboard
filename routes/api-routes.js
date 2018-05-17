@@ -55,17 +55,5 @@ router.post("/apiUserName", function (req, res) {
 	});
 });
 
-// POST route
-router.post("/", function (res, req) {
-	var user = req.body;
-	db.User.create({
-		nickname: user.nickname,
-		awesomeness_level: user.awesomeness_level,
-		age: user.age,
-		class: user.class
-	}).then(function (dbUser) {
-		res.json(dbUser);
-		console.log(dbUser);
-	});
-});
+
 module.exports = router;

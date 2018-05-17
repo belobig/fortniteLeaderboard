@@ -29,7 +29,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-const routes = require("./routes/api-routes.js", "./routes/html-routes");
+const routes = require("./routes/api-routes.js");
 
 app.use(routes);
 

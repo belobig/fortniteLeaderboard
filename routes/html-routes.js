@@ -22,21 +22,20 @@ var db = require("../models");
 // 		// console.log(results);
 // 	});
 // });
-$("#submit").on("click",(event)=>{
-	event.preventDefault();
-	$.ajax({
-		url: {"config.json":"development"}, 
-		method: "GET"
-	}).then((response)=>{
-		var dbDiv = $("#db");
-
-	console.log("response",response);
+// $(document).ready((e)=>{
+// 	$.ajax({
+// 		url: "../config/config.json",
+// 		data: {"config.json": "development"},
+// 		method: "GET"
+// 	}).then((response)=>{
+// 		var dbDiv = $("#db");
+// 	console.log(response);
 	
-	dbDiv.append(response.epicID);
+// 	dbDiv.append(response.epicID);
 	
-	});
+// 	});
 
-});
+// });
 	
 	// POST route
 // htmlrouter.post("/leaderboard/:user", function (res, req) {
@@ -45,20 +44,20 @@ $("#submit").on("click",(event)=>{
 	
 // 	db.User.create({
 // 		epicID: user.epicID
-// 		// kills: user.kills,
-// 		// killRank: user.killRank,
-// 		// kdRatio: user.kdRatio,
-// 		// kdRank: user.kdRank,
-// 		// kpm: user.kpm,
-// 		// kpmRank: user.kpmRank,
-// 		// matches: user.matches,
-// 		// score: user.score,
-// 		// scoreRank: user.scoreRank,
-// 		// scorePerMatch: user.scorePerMatch,
-// 		// trnRating: user.trnRating,
-// 	}), function(data){
+		// kills: user.kills,
+		// killRank: user.killRank,
+		// kdRatio: user.kdRatio,
+		// kdRank: user.kdRank,
+		// kpm: user.kpm,
+		// kpmRank: user.kpmRank,
+		// matches: user.matches,
+		// score: user.score,
+		// scoreRank: user.scoreRank,
+		// scorePerMatch: user.scorePerMatch,
+		// trnRating: user.trnRating,
+// 	}).then(function(data){
 // 		res.redirect("/");
-// 	}
+// 	});
 // });
  
 // module.exports = htmlrouter;

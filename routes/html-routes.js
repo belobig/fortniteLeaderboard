@@ -7,17 +7,26 @@ module.exports = function (app){
 	});
 	
 	// POST route
-	router.post("/", function (res, req) {
-		var user = req.body;
-		db.User.create({
-			nickname: user.nickname,
-			awesomeness_level: user.awesomeness_level,
-			age: user.age,
-			class: user.class
-		}).then(function (dbUser) {
-			res.json(dbUser);
-			console.log(dbUser);
-		});
+router.post("/", function (res, req) {
+	var user = req.body;
+	db.User.create({
+		epicID: user.epicID,
+		kills: user.kills,
+		killRank: user.killRank,
+		kdRatio: user.kdRatio,
+		kdRank: user.kdRank,
+		kpm: user.kpm,
+		kpmRank: user.kpmRank,
+		matches: user.matches,
+		score: user.score,
+		scoreRank: user.scoreRank,
+		scorePerMatch: user.scorePerMatch,
+		trnRating: user.trnRating,
+	}).then(function (dbUser) {
+		res.json(dbUser);
+		console.log(dbUser);
 	});
+});
+ 
 }
 

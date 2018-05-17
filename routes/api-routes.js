@@ -35,7 +35,7 @@ router.post("/apiUserName", function (req, res) {
 			return res.render("index", {error: response.data.error});
 		}
 		res.render("index", {response: response.data});
-		console.log("Response data: ", response.data.stats);
+		// console.log("Response data: ", response.data.stats);
 	});
 });
 

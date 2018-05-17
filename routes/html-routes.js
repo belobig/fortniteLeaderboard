@@ -1,5 +1,5 @@
 
-// var db = require("../models");
+var db = require("../models");
 // var express = require("express");
 // var htmlrouter = express.Router();
 
@@ -22,14 +22,15 @@
 // 		// console.log(results);
 // 	});
 // });
-$(document).ready((e)=>{
+$("#submit").on("click",(event)=>{
+	event.preventDefault();
 	$.ajax({
-		url: "../config/config.json",
-		data: {"config.json": "development"},
+		url: {"config.json":"development"}, 
 		method: "GET"
 	}).then((response)=>{
 		var dbDiv = $("#db");
-	console.log(response);
+
+	console.log("response",response);
 	
 	dbDiv.append(response.epicID);
 	

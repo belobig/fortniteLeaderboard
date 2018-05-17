@@ -22,3 +22,13 @@ Testing Framework:
 Use Sequelize’s Mock
 Use Mocha
 Use Chai
+
+Node and express: DONE
+GET and POST routes: DONE
+Testing: DONE
+New library, package or tech: DONE
+Folder structure: DONE
+Good coding standards: DONE
+SQL databade: IN PROGRESS
+Polished front end: IN PROGRESS
+Heroku: NOT STARTED

@@ -1,6 +1,6 @@
 <?php 
 
-$host         = "localhost";
+$host         = process.env;
 $username     = "root";
 
 $password     = "password";

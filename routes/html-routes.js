@@ -1,5 +1,5 @@
 
-// var db = require("../models");
+var db = require("../models");
 // var express = require("express");
 // var htmlrouter = express.Router();
 

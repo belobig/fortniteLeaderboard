@@ -37,7 +37,7 @@ db.sequelize.sync().then(function () {
 	// Start our server so that it can begin listening to client requests.
 	app.listen(PORT, function () {
 		// Log (server-side) when our server has started
-		console.log("Fraizer: 'I am listening' on: http://localhost:" + PORT);
+		console.log("Fraizer: I\'m listening: http://localhost:" + PORT);
 	});
 });
 

@@ -79,8 +79,14 @@
 				epic nickname:
 				<span class="fonthelper spacing font28" id="nickname">{{response.epicUserHandle}}</span>
 				<div>
-					<form action="/leaderboard/{{{response.epicUserHandle}}}?_method=POST" method="POST">
+					<form action="/leaderboard/save" method="POST" >
 						<input type="hidden">
+						<input type="hidden" name="user" value="{{response.epicUserHandle}}">
+						<input type="hidden" name="score" value="{{response.lifeTimeStats.[6].value}}">
+						<input type="hidden" name="matches" value="{{response.lifeTimeStats.[7].value}}">
+						<input type="hidden" name="wins" value="{{response.lifeTimeStats.[8].value}}">
+						<input type="hidden" name="kills" value="{{response.lifeTimeStats.[10].value}}">
+						
 						<button type="submit">Save Stats</button>
 					</form>
 				</div>
@@ -382,7 +388,7 @@
 					text
 				</div>
 				<ul>
-					{{#each Users}}
+					{{#each users}}
 					<li>{{this.epicID}}</li>
 					<li>{{this.kills}}</li>
 					<li>{{this.killRank}}</li>
@@ -399,10 +405,10 @@
 					<p>No data from users</p>
 					{{/each}}
 				</ul>
-{{#each this}}
-fart
-{{this.helpers}}
-{{/each}}
+
+				{{!-- {{#each users}} {{@key}}: {{this.id}} {{else}}
+				<p>No data from users</p>
+				{{/each}} --}}
 
 				<div class="row">
 					<div class="col s12 m6 l4">

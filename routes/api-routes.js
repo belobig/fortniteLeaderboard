@@ -14,7 +14,7 @@ var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
 
 router.get('/', function (req, res) {
 	db.User.findAll().then(function (results) {
-		console.log("Results", results);
+		// console.log("Results", results);
 		var userObj = {
 			users: results
 		};
@@ -52,25 +52,29 @@ router.post("/apiUserName", function (req, res) {
 	});
 });
 
-router.post("/leaderboard/:user", function (res, req) {
+router.post("/leaderboard/save", function (req, res) {
 	// console.log(req.req.params.user);
-	var user = req.req.params.user;
-	console.log(user);
+	var user = req.body;
+	console.log("\n-------------- req.body", req.body);
 	db.User.create({
-		epicID: user
-		// kills: user.kills,
+		epicID: user.user,
+		score: user.score,
+		matches: user.matches,
+		wins: user.wins,
+		// winsRatio: user.winsRatio,
+		kills: user.kills,
 		// killRank: user.killRank,
 		// kdRatio: user.kdRatio,
 		// kdRank: user.kdRank,
 		// kpm: user.kpm,
 		// kpmRank: user.kpmRank,
-		// matches: user.matches,
-		// score: user.score,
+		
+		
 		// scoreRank: user.scoreRank,
 		// scorePerMatch: user.scorePerMatch,
-		// trnRating: user.trnRating,
+		// trnRating: user.trnRating
 	}).then(function (data) {
-		res.res.redirect("/");
+		res.redirect("/");
 		// console.log("Res: ", res.res);
 
 	});

@@ -79,14 +79,14 @@
 				epic nickname:
 				<span class="fonthelper spacing font28" id="nickname">{{response.epicUserHandle}}</span>
 				<div>
-					<form action="/leaderboard/save" method="POST" >
+					<form action="/leaderboard/save" method="POST">
 						<input type="hidden">
 						<input type="hidden" name="user" value="{{response.epicUserHandle}}">
 						<input type="hidden" name="score" value="{{response.lifeTimeStats.[6].value}}">
 						<input type="hidden" name="matches" value="{{response.lifeTimeStats.[7].value}}">
 						<input type="hidden" name="wins" value="{{response.lifeTimeStats.[8].value}}">
 						<input type="hidden" name="kills" value="{{response.lifeTimeStats.[10].value}}">
-						
+
 						<button type="submit">Save Stats</button>
 					</form>
 				</div>
@@ -343,7 +343,27 @@
 				</div>
 			</div>
 		</div>
+		<table>
+			<tr>
+				<th>Nickname</th>
+				<th>Kills</th>
+				<th>Wins</th>
+				<th>Matches</th>
+				<th>Score</th>
+			</tr>
+				{{#each users}}
+				<tr>
+					<td>{{this.epicID}}</td>
+					<td>{{this.kills}}</td>
+					<td>{{this.wins}}</td>
+					<td>{{this.matches}}</td>
+					<td>{{this.score}}</td>
+				</tr>
+				{{else}}
+				<p>No data from users</p>
+				{{/each}}
 
+		</table>
 
 		<div class="row">
 			<div class="col s12 m12 l12">
@@ -384,31 +404,7 @@
 					<i class="mdi-content-send brown-text"></i>
 				</h3>
 				<h4>Look it's Us</h4>
-				<div id="db">
-					text
-				</div>
-				<ul>
-					{{#each users}}
-					<li>{{this.epicID}}</li>
-					<li>{{this.kills}}</li>
-					<li>{{this.killRank}}</li>
-					<li>{{this.kdRatio}}</li>
-					<li>{{this.kdRank}}</li>
-					<li>{{this.kpm}}</li>
-					<li>{{this.kpmRank}}</li>
-					<li>{{this.matches}}</li>
-					<li>{{this.score}}</li>
-					<li>{{this.scoreRank}}</li>
-					<li>{{this.scorePerMatch}}</li>
-					<li>{{this.trnRating}}</li>
-					{{else}}
-					<p>No data from users</p>
-					{{/each}}
-				</ul>
 
-				{{!-- {{#each users}} {{@key}}: {{this.id}} {{else}}
-				<p>No data from users</p>
-				{{/each}} --}}
 
 				<div class="row">
 					<div class="col s12 m6 l4">

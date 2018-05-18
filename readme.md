@@ -3,7 +3,6 @@ https://pacific-caverns-48876.herokuapp.com/
 
 
 ### Description ###
-interesting than technical.
 - This is an app to view your Fortnite scores and compare them to your friends or favorite streamer.
 
 

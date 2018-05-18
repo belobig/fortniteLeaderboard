@@ -1,11 +1,16 @@
 $(document).ready(function () {
+	// To call the tooltip function from Materialize, for the percentile bars
 	$('.tooltipped').tooltip();
+
+	// Variables for stats used in chart
 	var p2kills = $("#p2kills").text();
 	var p10kills = $("#p10kills").text();
 	var p9kills = $("#p9kills").text();
 	var nickname = $("#nickname").text();
 
 
+	// Grabbing stats for percentile bars
+	// Kills for each of the playlist types (Solos, Duos, and Squads)
 	var p2killsPercentile = $("#p2killsPercentile").text();
 	if (!p2killsPercentile) {
 		p2killsPercentile = 100;
@@ -19,6 +24,7 @@ $(document).ready(function () {
 		p9killsPercentile = 100;
 	}
 
+	// Kill/Death for each of the playlist types (Solos, Duos, and Squads)
 	var p2kdPercentile = $("#p2kdPercentile").text();
 	if (!p2kdPercentile) {
 		p2kdPercentile = 100;
@@ -32,6 +38,8 @@ $(document).ready(function () {
 		p9kdPercentile = 100;
 	}
 
+
+	// Kills per game for each of the playlist types (Solos, Duos, and Squads)
 	var p2kpgPercentile = $("#p2kpgPercentile").text();
 	if (!p2kpgPercentile) {
 		p2kpgPercentile = 100;
@@ -46,6 +54,7 @@ $(document).ready(function () {
 	}
 
 
+	// Chart.js creation of chart and color scheme
 	var ctx = document.getElementById("myChart").getContext('2d');
 	var myChart = new Chart(ctx, {
 		type: 'bar',
@@ -78,6 +87,8 @@ $(document).ready(function () {
 		}
 	});
 
+	// Sets value of percentile bar widths based on percentile values for each stat and playlist type
+	// Kills
 	document.getElementById("p2KillsFill").style.width = 100 - p2killsPercentile + "%";
 	$("#p2KillsBar").attr("data-tooltip", "Top " + p2killsPercentile + "%, " + (100 - p2killsPercentile) + "th perecentile");
 
@@ -88,6 +99,7 @@ $(document).ready(function () {
 	$("#p9KillsBar").attr("data-tooltip", "Top " + p9killsPercentile + "%, " + (100 - p9killsPercentile) + "th perecentile");
 
 
+	// Kill/Death
 	document.getElementById("p2kdFill").style.width = 100 - p2kdPercentile + "%";
 	$("#p2KDBar").attr("data-tooltip", "Top " + p2kdPercentile + "%, " + (100 - p2kdPercentile) + "th perecentile");
 
@@ -98,6 +110,7 @@ $(document).ready(function () {
 	$("#p9KDBar").attr("data-tooltip", "Top " + p9kdPercentile + "%, " + (100 - p9kdPercentile) + "th perecentile");
 
 
+	// Kills Per Game
 	document.getElementById("p2kpgFill").style.width = 100 - p2kpgPercentile + "%";
 	$("#p2kpgBar").attr("data-tooltip", "Top " + p2kpgPercentile + "%, " + (100 - p2kpgPercentile) + "th perecentile");
 

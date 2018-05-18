@@ -1,4 +1,4 @@
-
+/* This is for color reference only, this class is not used */
 .colorhelper {
 color: #2a2a2a;
 color: #ffff00;
@@ -16,10 +16,12 @@ color: #41b057;
 color: #c272d9;
 color: #9042a6;
 }
+
+/* An easy class to apply the Fortnite-esque font */
 .fonthelper {
 	font-family: 'Luckiest Guy', cursive;
 }
-/* Above content is for text fonts and color matching -- Comment or remove when production ready */
+
 
 body {
 	display: flex;

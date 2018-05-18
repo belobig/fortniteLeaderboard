@@ -19,7 +19,7 @@
 	</div>
 </nav>
 
-
+{{!-- To start Parallax --}}
 <div id="index-banner" class="parallax-container">
 	<div class="section no-pad-bot">
 		<div class="container">
@@ -45,10 +45,9 @@
 
 
 <div class="container lt_blue_BACK">
-	<!-- Page Content goes here -->
-	<!-- Page Layout here -->
-	<div class="row">
 
+	<div class="row">
+{{!-- Yellow input card, for inputting username and selecting platform to get stats --}}
 		<div class="col s12 m4 l4 sidebar z-depth-2">
 			<div id="epic_name">
 				<form id="char_form" method="POST" action="/apiUserName">
@@ -73,12 +72,14 @@
 			</div>
 		</div>
 
+{{!-- Area to show selected user's stats --}}
 		<div class="col s12 m8 l8 main">
 			<h1 class="drk_blue">User's Stats:</h1>
 			<p class="font28">
 				epic nickname:
 				<span class="fonthelper spacing font28" id="nickname">{{response.epicUserHandle}}</span>
 				<div>
+					{{!-- Form to get stats to save to DB --}}
 					<form action="/leaderboard/save" method="POST">
 						<input type="hidden">
 						<input type="hidden" name="user" value="{{response.epicUserHandle}}">
@@ -343,6 +344,7 @@
 				</div>
 			</div>
 		</div>
+		{{!-- Table to show saved stats for comparison --}}
 		<table>
 			<tr>
 				<th>Nickname</th>
@@ -360,11 +362,13 @@
 					<td>{{this.score}}</td>
 				</tr>
 				{{else}}
+				{{!-- This shows if it doesn't have any data to display from the DB --}}
 				<p>No data from users</p>
 				{{/each}}
 
 		</table>
 
+{{!-- Chart card --}}
 		<div class="row">
 			<div class="col s12 m12 l12">
 				<div class="card z-depth-2">
@@ -404,7 +408,7 @@
 					<i class="mdi-content-send brown-text"></i>
 				</h3>
 				<h4>Look it's Us</h4>
-
+{{!-- Pics of some good lookin dudes --}}
 
 				<div class="row">
 					<div class="col s12 m6 l4">
@@ -461,6 +465,7 @@
 	</div>
 </div>
 
+{{!-- Cool footer with links to our stuff --}}
 <footer class="page-footer footer-color">
 	<div class="container">
 		<div class="row">

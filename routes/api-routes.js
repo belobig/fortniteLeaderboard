@@ -1,17 +1,15 @@
 var db = require("../models");
-// var fortnite = require("../public/assets/js/fnImport");
-// var form = require("../public/assets/js/formhandler")
 var express = require("express");
 var axios = require("axios");
 var router = express.Router();
 
-// var epic_name = "iwafflesi";
+
 var key = "92bf5651-fef6-494e-a03d-52081c2382e4";
 
 
 // Routes
 
-
+// GET route that enables pulling data from database
 router.get('/', function (req, res) {
 	db.User.findAll().then(function (results) {
 		// console.log("Results", results);
@@ -52,8 +50,8 @@ router.post("/apiUserName", function (req, res) {
 	});
 });
 
+// POST Route to add user data to the database
 router.post("/leaderboard/save", function (req, res) {
-	// console.log(req.req.params.user);
 	var user = req.body;
 	console.log("\n-------------- req.body", req.body);
 	db.User.create({
@@ -61,22 +59,9 @@ router.post("/leaderboard/save", function (req, res) {
 		score: user.score,
 		matches: user.matches,
 		wins: user.wins,
-		// winsRatio: user.winsRatio,
-		kills: user.kills,
-		// killRank: user.killRank,
-		// kdRatio: user.kdRatio,
-		// kdRank: user.kdRank,
-		// kpm: user.kpm,
-		// kpmRank: user.kpmRank,
-		
-		
-		// scoreRank: user.scoreRank,
-		// scorePerMatch: user.scorePerMatch,
-		// trnRating: user.trnRating
+		kills: user.kills
 	}).then(function (data) {
 		res.redirect("/");
-		// console.log("Res: ", res.res);
-
 	});
 });
 
